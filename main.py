@@ -42,13 +42,13 @@ Ra = st.number_input("Armature Resistance (Ra) in Ohms", min_value=0.0, step=0.1
 
 
 if st.button("Calculate Efficiency"):
-    # Calculate the efficiency and core losses
+   
     Eff, CUL_or_error = Gen_Eff(V, CL, IL, K, Rsh, Ra)
     
     if Eff is None:
-        # Display the error message if there's an issue with the input values
+       
         st.error(CUL_or_error)
     else:
-        # Display the results if the calculation is successful
+        
         st.write(f"Efficiency: {Eff:.2f}%")
         st.write(f"Core Losses (CUL): {CUL_or_error:.2f} W")
